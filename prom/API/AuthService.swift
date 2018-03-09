@@ -25,5 +25,28 @@ class AuthService: NSObject {
             }
         }
     }
-
+    
+    
+    func signUpWith(email: String, password: String, fullname: String,
+                    successCallBack: @escaping (_ user: User) -> Void,
+                    failureCallBack: @escaping (_ errorMessage: String) -> Void ) {
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+            if error == nil {
+                let profileUpdateRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                profileUpdateRequest?.displayName = fullname
+                
+                profileUpdateRequest?.commitChanges { (profileerror) in
+                    if error == nil {
+                        successCallBack(user!)
+                    } else {
+                        failureCallBack(profileerror.debugDescription)
+                    }
+                }
+            } else {
+                failureCallBack(error.debugDescription)
+            }
+        }
+    
+    }
 }

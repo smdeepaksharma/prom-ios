@@ -27,47 +27,17 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gul-FM-Oll">
-                    <rect key="frame" x="16" y="268" width="343" height="99"/>
+                    <rect key="frame" x="16" y="268" width="343" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fs6-YP-m6X">
-                    <rect key="frame" x="77" y="401" width="228" height="50"/>
-                    <color key="backgroundColor" red="0.1647058824" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="pcb-c3-J72"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                    <state key="normal" title="Sign Up">
-                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WzK-XF-JW0">
-                    <rect key="frame" x="77" y="479" width="228" height="50"/>
-                    <color key="backgroundColor" red="0.35749002229999999" green="0.28502272109999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="FD9-Fl-WRk"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                    <state key="normal" title="Sign In">
-                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.30502879619598389" green="0.57773047685623169" blue="0.9156719446182251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WzK-XF-JW0" secondAttribute="bottom" constant="138" id="4nD-Ii-cHo"/>
-                <constraint firstItem="fs6-YP-m6X" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="77" id="6DJ-G8-UHZ"/>
-                <constraint firstItem="WzK-XF-JW0" firstAttribute="trailing" secondItem="fs6-YP-m6X" secondAttribute="trailing" id="6bO-C1-I3S"/>
                 <constraint firstItem="zNy-KP-K8e" firstAttribute="leading" secondItem="gul-FM-Oll" secondAttribute="leading" id="DpI-Ff-zwt"/>
                 <constraint firstItem="zNy-KP-K8e" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="194" id="EIa-TF-gee"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fs6-YP-m6X" secondAttribute="trailing" constant="70" id="IZY-30-Ohi"/>
                 <constraint firstItem="zNy-KP-K8e" firstAttribute="trailing" secondItem="gul-FM-Oll" secondAttribute="trailing" id="Ih6-BX-93M"/>
-                <constraint firstItem="WzK-XF-JW0" firstAttribute="leading" secondItem="fs6-YP-m6X" secondAttribute="leading" id="ZlL-yB-9Fn"/>
-                <constraint firstItem="WzK-XF-JW0" firstAttribute="top" secondItem="fs6-YP-m6X" secondAttribute="bottom" constant="28" id="aHq-c8-0p1"/>
-                <constraint firstItem="fs6-YP-m6X" firstAttribute="top" secondItem="gul-FM-Oll" secondAttribute="bottom" constant="34" id="frZ-qC-NDh"/>
                 <constraint firstItem="zNy-KP-K8e" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="gCd-YV-gLH"/>
                 <constraint firstItem="gul-FM-Oll" firstAttribute="top" secondItem="zNy-KP-K8e" secondAttribute="bottom" constant="33" id="rAd-WO-Y4P"/>
                 <constraint firstItem="zNy-KP-K8e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="wES-3q-Xm7"/>

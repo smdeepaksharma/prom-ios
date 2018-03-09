@@ -19,10 +19,10 @@
 		006D40EB203FD2D800907F5F /* Feature.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006D40EA203FD2D800907F5F /* Feature.xib */; };
 		006D40ED203FD32200907F5F /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D40EC203FD32200907F5F /* FeatureViewController.swift */; };
 		006D40F0203FFB9A00907F5F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D40EF203FFB9A00907F5F /* AuthViewController.swift */; };
-		006D40F2203FFBAB00907F5F /* AuthContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D40F1203FFBAB00907F5F /* AuthContract.swift */; };
 		006D40F4203FFBBB00907F5F /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D40F3203FFBBB00907F5F /* AuthPresenter.swift */; };
 		006D40F7203FFD1B00907F5F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D40F6203FFD1B00907F5F /* AuthService.swift */; };
 		006D40FB2040055F00907F5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 006D40FA2040055F00907F5F /* GoogleService-Info.plist */; };
+		006D4102204D121600907F5F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D4101204D121600907F5F /* SignUpViewController.swift */; };
 		AD4915BE3C514FE2A368837B /* Pods_prom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F9B0809F1F761B29BD1CC /* Pods_prom.framework */; };
 		C5D2384F76B723CAD8DBCE5F /* Pods_promTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D473E946B15E2FD69697CC0D /* Pods_promTests.framework */; };
 		D3B67F405C3F2FD2EF80B00C /* Pods_promUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACF5EDD5384B1E1009638BD /* Pods_promUITests.framework */; };
@@ -64,10 +64,10 @@
 		006D40EA203FD2D800907F5F /* Feature.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Feature.xib; sourceTree = "<group>"; };
 		006D40EC203FD32200907F5F /* FeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
 		006D40EF203FFB9A00907F5F /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		006D40F1203FFBAB00907F5F /* AuthContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContract.swift; sourceTree = "<group>"; };
 		006D40F3203FFBBB00907F5F /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		006D40F6203FFD1B00907F5F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		006D40FA2040055F00907F5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		006D4101204D121600907F5F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		28ED8047D4882B4A9EE7CE0C /* Pods-promTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-promTests/Pods-promTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5445F9DFB23ADEC4667C8DD4 /* Pods-prom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prom/Pods-prom.debug.xcconfig"; sourceTree = "<group>"; };
 		54CA8A7590AA4AA5EAEA4D2C /* Pods-prom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prom.release.xcconfig"; path = "Pods/Target Support Files/Pods-prom/Pods-prom.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,8 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				006D40EF203FFB9A00907F5F /* AuthViewController.swift */,
-				006D40F1203FFBAB00907F5F /* AuthContract.swift */,
 				006D40F3203FFBBB00907F5F /* AuthPresenter.swift */,
+				006D4101204D121600907F5F /* SignUpViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -521,7 +521,7 @@
 				006D40B9203FD2A100907F5F /* ViewController.swift in Sources */,
 				006D40BF203FD2A100907F5F /* prom.xcdatamodeld in Sources */,
 				006D40F7203FFD1B00907F5F /* AuthService.swift in Sources */,
-				006D40F2203FFBAB00907F5F /* AuthContract.swift in Sources */,
+				006D4102204D121600907F5F /* SignUpViewController.swift in Sources */,
 				006D40ED203FD32200907F5F /* FeatureViewController.swift in Sources */,
 				006D40B7203FD2A100907F5F /* AppDelegate.swift in Sources */,
 				006D40F0203FFB9A00907F5F /* AuthViewController.swift in Sources */,

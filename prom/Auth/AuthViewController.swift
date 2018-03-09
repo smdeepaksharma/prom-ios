@@ -14,6 +14,8 @@ class AuthViewController: UITableViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     
+    
+
     let authPresenter = AuthPresenter(authService: AuthService())
     
     override func viewDidLoad() {
@@ -24,6 +26,12 @@ class AuthViewController: UITableViewController {
         
         authPresenter.attachView(view: self)
     }
+    
+    @IBAction func onSignInCancelled(_ sender: Any) {
+        print("Cancel clicked")
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     
     @IBAction func onSignInClicked(_ sender: UIButton) {
@@ -93,6 +101,10 @@ class AuthViewController: UITableViewController {
 }
 
 extension AuthViewController: AuthView {
+    func updateUI(user: AuthViewData) {
+        
+    }
+    
  
     func startLoading() -> UIView {
         let uiView = self.view!
@@ -120,6 +132,16 @@ extension AuthViewController: AuthView {
         self.present(alert, animated: true, completion: nil)
     }
 
+}
+
+extension UIViewController {
+    func performSegueToReturnBack()  {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 }
 
 
