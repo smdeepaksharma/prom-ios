@@ -14,14 +14,14 @@ struct AuthViewData {
     var fullname: String
 }
 
-protocol AuthView: NSObjectProtocol{
+protocol AuthView: NSObjectProtocol {
     func startLoading() -> UIView
     func stopLoading(spinner: UIView)
     func showError(title: String, message: String)
     func updateUI(user: AuthViewData)
 }
 
-class AuthPresenter {
+class AuthPresenter: NSObject {
     private let authService: AuthService
     weak private var authView: AuthView?
     
