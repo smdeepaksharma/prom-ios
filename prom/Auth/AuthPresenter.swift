@@ -18,7 +18,7 @@ protocol AuthView: NSObjectProtocol {
     func startLoading() -> UIView
     func stopLoading(spinner: UIView)
     func showError(title: String, message: String)
-    func updateUI(user: AuthViewData)
+    func updateUI()
 }
 
 class AuthPresenter: NSObject {
@@ -42,6 +42,7 @@ class AuthPresenter: NSObject {
         authService.signInWith(email: email, password: password, onSuccess : { user in
             print(user)
             self.authView?.stopLoading(spinner: sv!)
+            self.authView?.updateUI()
         }, onFailure: { errorMessage in
             self.authView?.stopLoading(spinner: sv!)
             self.authView?.showError(title: "Invalid Email/Password", message: errorMessage)

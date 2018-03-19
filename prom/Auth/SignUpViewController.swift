@@ -75,10 +75,9 @@ class SignUpViewController: UITableViewController {
 }
 
 extension SignUpViewController: AuthView {
-        func updateUI(user: AuthViewData) {
+        func updateUI() {
             
         }
-        
         
         func startLoading() -> UIView {
             let uiView = self.view!

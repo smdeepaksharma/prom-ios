@@ -10,15 +10,15 @@ import UIKit
 
 class StoryBoard: NSObject {
     
-    var storyBoardId: NSNumber?
-    var storyBoardTitle: NSString?
-    var owner: NSString?
+    var storyBoardId: String?
+    var storyBoardTitle: String?
+    var owner: String?
     var collaborators: NSDictionary?
     var inProgressTasks: NSDictionary?
     var doneTasks: NSDictionary?
     var iceBoxTasks: NSDictionary?
     
-    init(projectID: NSNumber, projectTitle: NSString, owner: NSString) {
+    init(projectID: String, projectTitle: String, owner: String) {
         self.storyBoardId = projectID
         self.storyBoardTitle = projectTitle
         self.owner = owner

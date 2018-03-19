@@ -19,29 +19,38 @@ struct StoryBoardKeys {
 
 class StoryBoardService: FirebaseService {
 
-    let firebaseKey = FirebaseKey()
     var storyBoardsKey = StoryBoardKeys()
     
-    func getStoryBoards(onStoryBoardsFetched: (_ boardsList: [String]?) -> Void )  {
+    func getStoryBoards(onStoryBoardsFetched: @escaping (_ boardsList: [StoryBoard]?) -> Void )  {
+        
+        var boards: [StoryBoard]?
         if let userId = getCurrentFBUserID() {
             self.getDatabaseReference().child(firebaseKey.USER_PROJECTS_KEY).child(userId).observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
                 if value == nil {
                     print("No boards yet")
                 } else {
-                    print(value!)
+                    boards = []
+                    for (key, value) in value! {
+                        print(key, value)
+                        boards?.append(StoryBoard.init(projectID: key as! String, projectTitle: value as! String, owner: userId as String))
+                    }
+                    print("Boards fetched: ", boards?.count)
+                    onStoryBoardsFetched(boards)
                 }
             })
         }
     }
     
-    func createStoryBoardWith(title: String) {
+    func createStoryBoardWith(title: String, completionHandler: () -> ()) {
         if let userId = getCurrentFBUserID() {
-            let timestamp = NSDate().timeIntervalSince1970
-            let storyKey = "\(userId)\(timestamp)"
+            let timestamp = NSDate().timeIntervalSince1970.bitPattern
+            let storyKey = "\(userId)_\(timestamp)"
             self.getDatabaseReference().child(firebaseKey.STORYBOARDS_KEY)
                 .child(storyKey)
                 .setValue([storyBoardsKey.title: title, storyBoardsKey.owner: userId])
+            
+            self.getDatabaseReference().child(firebaseKey.USER_PROJECTS_KEY).child(userId).child(storyKey).setValue(title)
         }
     }
     

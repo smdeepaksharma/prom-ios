@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-import UIKit
+import Firebase
 
 class FeatureViewController: UIViewController, UIScrollViewDelegate {
     
@@ -18,20 +17,25 @@ class FeatureViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        scrollView.isPagingEnabled = true
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.delegate = self
-        
-        let featureViews = createFeaturesViews()
-        setUpScrollView(featureViews: featureViews)
-        
-        pageControl.numberOfPages = featureViews.count
-        pageControl.currentPage = 0
-        
-        view.bringSubview(toFront: pageControl)
+            scrollView.isPagingEnabled = true
+            scrollView.showsHorizontalScrollIndicator = false
+            scrollView.delegate = self
+            
+            let featureViews = createFeaturesViews()
+            setUpScrollView(featureViews: featureViews)
+            
+            pageControl.numberOfPages = featureViews.count
+            pageControl.currentPage = 0
+            
+            view.bringSubview(toFront: pageControl)
+  
     }
     
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "authUserRedirect" {
+            let secondViewController = segue.destination as! StoryBoardsViewController
+        }
+    }
     
     func createFeaturesViews() -> [FeatureView] {
         

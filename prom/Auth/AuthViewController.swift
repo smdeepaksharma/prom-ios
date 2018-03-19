@@ -13,9 +13,6 @@ class AuthViewController: UITableViewController {
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
-    
-    
-
     let authPresenter = AuthPresenter(authService: AuthService())
     
     override func viewDidLoad() {
@@ -23,7 +20,6 @@ class AuthViewController: UITableViewController {
         addStylesToBtn()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
         authPresenter.attachView(view: self)
     }
     
@@ -31,8 +27,6 @@ class AuthViewController: UITableViewController {
         print("Cancel clicked")
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
     
     @IBAction func onSignInClicked(_ sender: UIButton) {
         self.view.endEditing(true)
@@ -50,10 +44,7 @@ class AuthViewController: UITableViewController {
             showError(title: "Invalid", message: "Please enter a valid email address")
             return
         }
-        
         authPresenter.signInWith(email: email.text!, password: password.text!)
-        
-        
     }
     
     func isValidEmail(testStr:String) -> Bool {
@@ -62,7 +53,6 @@ class AuthViewController: UITableViewController {
         return emailTest.evaluate(with: testStr)
     }
 
-    
     func addStylesToBtn() {
         signInBtn.backgroundColor = .clear
         signInBtn.layer.cornerRadius = 6
@@ -86,26 +76,14 @@ class AuthViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension AuthViewController: AuthView {
-    func updateUI(user: AuthViewData) {
-        
-    }
     
- 
+    func updateUI() {
+        performSegue(withIdentifier: "signInToMain", sender: self)
+    }
+
     func startLoading() -> UIView {
         let uiView = self.view!
         let spinnerView = UIView.init(frame: uiView.bounds)
@@ -131,7 +109,6 @@ extension AuthViewController: AuthView {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-
 }
 
 extension UIViewController {

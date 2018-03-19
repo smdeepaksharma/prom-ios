@@ -30,11 +30,11 @@
 		006D4102204D121600907F5F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D4101204D121600907F5F /* SignUpViewController.swift */; };
 		006D41052052654100907F5F /* StoryBoardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D41042052654100907F5F /* StoryBoardsViewController.swift */; };
 		006D4107205265A200907F5F /* StoryBoardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D4106205265A200907F5F /* StoryBoardsPresenter.swift */; };
-		006D410B2052662A00907F5F /* StoryBoardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D410A2052662A00907F5F /* StoryBoardsView.swift */; };
 		006D410D20526B1B00907F5F /* StoryBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D410C20526B1B00907F5F /* StoryBoardService.swift */; };
 		006D41112054E51500907F5F /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D41102054E51500907F5F /* BasePresenter.swift */; };
 		006D41142054E98700907F5F /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D41132054E98700907F5F /* SpinnerView.swift */; };
 		006D41162055019D00907F5F /* CreateStoryBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D41152055019D00907F5F /* CreateStoryBoardController.swift */; };
+		00D9D40A205F1FC700DB3141 /* CommonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9D409205F1FC700DB3141 /* CommonUIView.swift */; };
 		AD4915BE3C514FE2A368837B /* Pods_prom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F9B0809F1F761B29BD1CC /* Pods_prom.framework */; };
 		C5D2384F76B723CAD8DBCE5F /* Pods_promTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D473E946B15E2FD69697CC0D /* Pods_promTests.framework */; };
 		D3B67F405C3F2FD2EF80B00C /* Pods_promUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACF5EDD5384B1E1009638BD /* Pods_promUITests.framework */; };
@@ -87,11 +87,11 @@
 		006D4101204D121600907F5F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		006D41042052654100907F5F /* StoryBoardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardsViewController.swift; sourceTree = "<group>"; };
 		006D4106205265A200907F5F /* StoryBoardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardsPresenter.swift; sourceTree = "<group>"; };
-		006D410A2052662A00907F5F /* StoryBoardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardsView.swift; sourceTree = "<group>"; };
 		006D410C20526B1B00907F5F /* StoryBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardService.swift; sourceTree = "<group>"; };
 		006D41102054E51500907F5F /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		006D41132054E98700907F5F /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		006D41152055019D00907F5F /* CreateStoryBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStoryBoardController.swift; sourceTree = "<group>"; };
+		00D9D409205F1FC700DB3141 /* CommonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUIView.swift; sourceTree = "<group>"; };
 		28ED8047D4882B4A9EE7CE0C /* Pods-promTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-promTests/Pods-promTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5445F9DFB23ADEC4667C8DD4 /* Pods-prom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prom/Pods-prom.debug.xcconfig"; sourceTree = "<group>"; };
 		54CA8A7590AA4AA5EAEA4D2C /* Pods-prom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prom.release.xcconfig"; path = "Pods/Target Support Files/Pods-prom/Pods-prom.release.xcconfig"; sourceTree = "<group>"; };
@@ -239,7 +239,6 @@
 			children = (
 				006D41042052654100907F5F /* StoryBoardsViewController.swift */,
 				006D4106205265A200907F5F /* StoryBoardsPresenter.swift */,
-				006D410A2052662A00907F5F /* StoryBoardsView.swift */,
 				006D41152055019D00907F5F /* CreateStoryBoardController.swift */,
 			);
 			path = StoryBoards;
@@ -249,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				006D41132054E98700907F5F /* SpinnerView.swift */,
+				00D9D409205F1FC700DB3141 /* CommonUIView.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -587,7 +587,6 @@
 				006D41162055019D00907F5F /* CreateStoryBoardController.swift in Sources */,
 				002DF5E8205D87A100AFA31A /* Task.swift in Sources */,
 				002DF5E42056010300AFA31A /* PromUser.swift in Sources */,
-				006D410B2052662A00907F5F /* StoryBoardsView.swift in Sources */,
 				006D40F7203FFD1B00907F5F /* AuthService.swift in Sources */,
 				006D4102204D121600907F5F /* SignUpViewController.swift in Sources */,
 				006D41052052654100907F5F /* StoryBoardsViewController.swift in Sources */,
@@ -598,6 +597,7 @@
 				006D40E9203FD2CA00907F5F /* FeatureView.swift in Sources */,
 				002DF5EC205D987000AFA31A /* TasksService.swift in Sources */,
 				002DF5E6205D81FE00AFA31A /* StoryBoard.swift in Sources */,
+				00D9D40A205F1FC700DB3141 /* CommonUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
