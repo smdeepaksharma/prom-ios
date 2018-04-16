@@ -8,7 +8,13 @@
 
 import UIKit
 
-class CreateStoryBoardController: UITableViewController, StoryBoardsView  {
+class CreateStoryBoardController: BaseUITableViewController, StoryBoardsView  {
+    
+    
+    func updateView() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     func setStoryBoards(storyboards: [StoryBoard]?) {
         
@@ -24,7 +30,8 @@ class CreateStoryBoardController: UITableViewController, StoryBoardsView  {
     }
 
     @IBAction func createNewStoryBoard(_ sender: Any) {
-        guard storyBoardTitle.text != nil else {
+        guard storyBoardTitle.text != nil && !(storyBoardTitle.text?.isEmpty)! else {
+            showError(title: "Required", message: "Storyboard name cant be empty", vc: self)
             return
         }
         self.storyBoardPresenter.createStoryBoardWith(title: storyBoardTitle.text!)

@@ -10,6 +10,7 @@ import UIKit
 
 protocol StoryBoardsView : NSObjectProtocol {
     func setStoryBoards(storyboards: [StoryBoard]?)
+    func updateView()
 }
 
 class StoryBoardsPresenter: NSObject {
@@ -29,7 +30,7 @@ class StoryBoardsPresenter: NSObject {
     }
     
     func createStoryBoardWith(title: String) {
-        storyBoardService.createStoryBoardWith(title: title, completionHandler: { print("success")})
+        storyBoardService.createStoryBoardWith(title: title, completionHandler: { self.storyBoardView?.updateView()})
     }
     
     func attachView(view: StoryBoardsView) {

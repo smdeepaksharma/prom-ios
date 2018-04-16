@@ -16,10 +16,12 @@ class StoryBoardsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         storyBoardPresenter.attachView(view: self)
-        storyBoardPresenter.getStoryBoards()
-        
         self.tableView.dataSource = self
         self.tableView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        storyBoardPresenter.getStoryBoards()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,15 +42,27 @@ class StoryBoardsViewController: UITableViewController {
         return cell
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(storyBoardList![indexPath.item].storyBoardTitle ?? "E")
+        performSegue(withIdentifier: "projectTasks", sender: self)
+    }
+    
 
 }
 
 extension StoryBoardsViewController: StoryBoardsView {
+    func updateView() {
+        
+    }
+    
     func setStoryBoards(storyboards: [StoryBoard]?) {
         self.storyBoardList = storyboards!
         print("in view \(self.storyBoardList?.count)")
         self.tableView.reloadData()
-}
+    }
+    
+    
     
     
 

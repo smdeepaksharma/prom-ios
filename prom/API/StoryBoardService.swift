@@ -49,8 +49,9 @@ class StoryBoardService: FirebaseService {
             self.getDatabaseReference().child(firebaseKey.STORYBOARDS_KEY)
                 .child(storyKey)
                 .setValue([storyBoardsKey.title: title, storyBoardsKey.owner: userId])
-            
             self.getDatabaseReference().child(firebaseKey.USER_PROJECTS_KEY).child(userId).child(storyKey).setValue(title)
+            
+             completionHandler();
         }
     }
     

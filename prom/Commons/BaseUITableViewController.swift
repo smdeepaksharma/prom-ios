@@ -1,14 +1,23 @@
 //
-//  CommonUIView.swift
+//  BaseUITableViewController.swift
 //  prom
 //
-//  Created by Deepak Sharma S M on 3/18/18.
+//  Created by Deepak Sharma S M on 4/12/18.
 //  Copyright © 2018 Deepak Sharma S M. All rights reserved.
 //
+
 import UIKit
-class CommonUIView {
+
+class BaseUITableViewController: UITableViewController {
     
     let currentView: UIView? = nil
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     func startLoading() -> UIView {
         let uiView = currentView!
@@ -30,7 +39,7 @@ class CommonUIView {
         }
     }
     
-    func showError(title: String, message: String, vc: UIViewController) {
+    func showError(title: String, message: String, vc: UITableViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         vc.present(alert, animated: true, completion: nil)
@@ -41,4 +50,8 @@ class CommonUIView {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         vc.present(alert, animated: true, completion: nil)
     }
+    
+
+    
+
 }
