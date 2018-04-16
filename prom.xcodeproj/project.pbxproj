@@ -40,6 +40,7 @@
 		00C4380A208437EA0086396F /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C43809208437EA0086396F /* MembersViewController.swift */; };
 		00C4380C208447960086396F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C4380B208447960086396F /* MenuViewController.swift */; };
 		00C4380E208449340086396F /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C4380D208449340086396F /* TasksViewController.swift */; };
+		00C6499D20848757005B5B0D /* AvatarCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C6499C20848757005B5B0D /* AvatarCellCollectionViewCell.swift */; };
 		00D9D40A205F1FC700DB3141 /* CommonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9D409205F1FC700DB3141 /* CommonUIView.swift */; };
 		AD4915BE3C514FE2A368837B /* Pods_prom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F9B0809F1F761B29BD1CC /* Pods_prom.framework */; };
 		C5D2384F76B723CAD8DBCE5F /* Pods_promTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D473E946B15E2FD69697CC0D /* Pods_promTests.framework */; };
@@ -103,6 +104,7 @@
 		00C43809208437EA0086396F /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
 		00C4380B208447960086396F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		00C4380D208449340086396F /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		00C6499C20848757005B5B0D /* AvatarCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		00D9D409205F1FC700DB3141 /* CommonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUIView.swift; sourceTree = "<group>"; };
 		28ED8047D4882B4A9EE7CE0C /* Pods-promTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-promTests/Pods-promTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5445F9DFB23ADEC4667C8DD4 /* Pods-prom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prom/Pods-prom.debug.xcconfig"; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				00D9D409205F1FC700DB3141 /* CommonUIView.swift */,
 				001BE0CB208040C50046459E /* BaseUIViewController.swift */,
 				001BE0CD2080410B0046459E /* BaseUITableViewController.swift */,
+				00C6499C20848757005B5B0D /* AvatarCellCollectionViewCell.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-prom/Pods-prom-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/InitialsImageView/InitialsImageView.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -543,6 +547,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InitialsImageView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -622,6 +627,7 @@
 				001BE0CE2080410B0046459E /* BaseUITableViewController.swift in Sources */,
 				00C4380E208449340086396F /* TasksViewController.swift in Sources */,
 				006D41052052654100907F5F /* StoryBoardsViewController.swift in Sources */,
+				00C6499D20848757005B5B0D /* AvatarCellCollectionViewCell.swift in Sources */,
 				006D40ED203FD32200907F5F /* FeatureViewController.swift in Sources */,
 				006D4107205265A200907F5F /* StoryBoardsPresenter.swift in Sources */,
 				006D40B7203FD2A100907F5F /* AppDelegate.swift in Sources */,
