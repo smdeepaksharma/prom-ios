@@ -45,7 +45,7 @@ class StoryBoardsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(storyBoardList![indexPath.item].storyBoardTitle ?? "E")
-        performSegue(withIdentifier: "projectTasks", sender: self)
+        performSegue(withIdentifier: "storyDetails", sender: self)
     }
     
 

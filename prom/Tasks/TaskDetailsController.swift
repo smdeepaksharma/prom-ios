@@ -8,16 +8,19 @@
 
 import UIKit
 
-class TaskDetailsController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+class TaskDetailsController: BaseUITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var estimate: UITextField!
     @IBOutlet weak var taskDueDate: UITextField!
+    @IBOutlet weak var taskTitleTextField: UITextField!
+    @IBOutlet weak var projectTitleLabel: UILabel!
+    @IBOutlet weak var taskDescriptionTextField: UITextView!
+    @IBOutlet weak var estimateTextField: UITextField!
+    @IBOutlet weak var actionButton: UIButton!
+    
     var picker = UIDatePicker()
     var estimatePicker = UIPickerView()
-    
     let estimatePoints = ["0 points", "1 point", "2 points", "3 points", "5 points"]
-    
     var taskTitle: String?
     var taskDescription: String?
     var taskDue: String?
@@ -75,7 +78,6 @@ class TaskDetailsController: UITableViewController, UIPickerViewDelegate, UIPick
         self.view.endEditing(true)
     }
     
-    
     @objc func donePressed() {
         let formatter = DateFormatter();
         formatter.dateStyle = .medium
@@ -99,8 +101,6 @@ class TaskDetailsController: UITableViewController, UIPickerViewDelegate, UIPick
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -110,6 +110,17 @@ class TaskDetailsController: UITableViewController, UIPickerViewDelegate, UIPick
         // #warning Incomplete implementation, return the number of rows
         return 6
     }
+    
+    
+    @IBAction func onTaskCreate(_ sender: Any) {
+        guard taskTitleTextField.text != nil && !(taskTitleTextField.text?.isEmpty)! else {
+            showError(title: "Required", message: "Task name cannot be empty", vc: self)
+            return
+        }
+    }
+    
+    
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -156,12 +167,6 @@ class TaskDetailsController: UITableViewController, UIPickerViewDelegate, UIPick
     }
     */
 
-
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
-    }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
 
 }

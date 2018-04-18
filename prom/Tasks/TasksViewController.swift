@@ -11,6 +11,7 @@ import UIKit
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+    @IBOutlet weak var maneuTrailingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var tabelView: UITableView!
     @IBOutlet weak var menuLeadingContraint: NSLayoutConstraint!
@@ -23,7 +24,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.tabelView.delegate = self
         self.tabelView.dataSource = self
-        menuLeadingContraint.constant = -230.00
+        maneuTrailingConstraint.constant = -230.00
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,10 +42,10 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func onToggleMenu(_ sender: Any) {
         toggle = !toggle
         if(toggle) {
-            menuLeadingContraint.constant = 0
+            maneuTrailingConstraint.constant = 0
             UIView.animate(withDuration: 0.3, animations: { self.view.layoutIfNeeded()})
         } else {
-            menuLeadingContraint.constant = -230.00
+            maneuTrailingConstraint.constant = -230.00
             UIView.animate(withDuration: 0.3, animations: { self.view.layoutIfNeeded()})
         }
     }
