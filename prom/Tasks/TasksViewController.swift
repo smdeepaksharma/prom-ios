@@ -152,7 +152,7 @@ class TasksViewController: BaseUIViewController, UITableViewDelegate, UITableVie
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "taskDetails" || segue.identifier == "taskDetails"{
+        if segue.identifier == "taskDetails" || segue.identifier == "newTaskDetails"{
             if let taskDetailsController = segue.destination as? TaskDetailsController {
                 taskDetailsController.storyBoard = self.selectedStoryBoard!
                 taskDetailsController.selectedTask = self.selectedTask

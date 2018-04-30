@@ -1414,7 +1414,7 @@
         <image name="help" width="24" height="24"/>
         <image name="menu" width="25" height="25"/>
         <image name="privacy" width="24" height="24"/>
-        <image name="profile" width="50" height="50"/>
+        <image name="profile" width="26" height="26"/>
         <image name="standup" width="25" height="25"/>
         <image name="terms" width="24" height="24"/>
         <image name="user" width="45" height="45"/>

@@ -41,7 +41,7 @@ class FeatureViewController: UIViewController, UIScrollViewDelegate {
         
         let feature1 = Bundle.main.loadNibNamed("Feature", owner: self, options: nil)?.first as! FeatureView
         feature1.title.text = "Hello Prom!"
-        feature1.descriptionLabel.text = "Ready to get stuff done? Manage your workload, communicate with your team and celebrate success"
+        feature1.descriptionLabel.text = "Manage your workload, communicate with your team and celebrate success"
         feature1.icon.image = UIImage.init(named: "prom")
         
         let feature2 = Bundle.main.loadNibNamed("Feature", owner: self, options: nil)?.first as! FeatureView

@@ -79,6 +79,7 @@ extension StoryBoardsViewController: StoryBoardsView {
         if storyboards == nil {
             self.tableView.backgroundView = EmptyStateView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height), nib: "EmptyState", image: UIImage.init(named: "storyboard")!, message: "Go ahead and create your first stoyboard")
         } else {
+            self.tableView.backgroundView = nil
             self.storyBoardList = storyboards!
             self.tableView.reloadData()
         }
