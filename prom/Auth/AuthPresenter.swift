@@ -61,6 +61,7 @@ class AuthPresenter: NSObject {
         let activityIndicator = self.authView?.startLoading()
         authService.signUpWith(email: email, password: password, fullname: fullname, successCallBack: { user in
             self.authView?.stopLoading(spinner: activityIndicator!)
+            self.authView?.updateUI()
         }, failureCallBack: { error in
              self.authView?.stopLoading(spinner: activityIndicator!)
         });

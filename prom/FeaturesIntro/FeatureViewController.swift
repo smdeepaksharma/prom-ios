@@ -33,7 +33,7 @@ class FeatureViewController: UIViewController, UIScrollViewDelegate {
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "authUserRedirect" {
-            let secondViewController = segue.destination as! StoryBoardsViewController
+            let _ = segue.destination as! StoryBoardsViewController
         }
     }
     
@@ -41,15 +41,18 @@ class FeatureViewController: UIViewController, UIScrollViewDelegate {
         
         let feature1 = Bundle.main.loadNibNamed("Feature", owner: self, options: nil)?.first as! FeatureView
         feature1.title.text = "Hello Prom!"
-        feature1.descriptionLabel.text = "Ready to get stuff done?"
+        feature1.descriptionLabel.text = "Ready to get stuff done? Manage your workload, communicate with your team and celebrate success"
+        feature1.icon.image = UIImage.init(named: "prom")
         
         let feature2 = Bundle.main.loadNibNamed("Feature", owner: self, options: nil)?.first as! FeatureView
         feature2.title.text = "Add details"
         feature2.descriptionLabel.text = "Add project details, deadlines, priority and collaboraters"
+        feature2.icon.image = UIImage.init(named: "add_details")
         
         let feature3 = Bundle.main.loadNibNamed("Feature", owner: self, options: nil)?.first as! FeatureView
         feature3.title.text = "Team up"
         feature3.descriptionLabel.text = "Invite people to join your story, all for free!"
+        feature3.icon.image = UIImage.init(named: "team")
         
         return [feature1, feature2, feature3]
     }

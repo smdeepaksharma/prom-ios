@@ -11,14 +11,14 @@ import UIKit
 class StoryBoard: NSObject {
     
     var storyBoardId: String?
-    var storyBoardTitle: String?
-    var owner: String?
+    var storyBoardTitle: String
+    var owner: ProMUser
     var collaborators: NSDictionary?
     var inProgressTasks: NSDictionary?
     var doneTasks: NSDictionary?
     var iceBoxTasks: NSDictionary?
     
-    init(projectID: String, projectTitle: String, owner: String) {
+    init(projectID: String, projectTitle: String, owner: ProMUser) {
         self.storyBoardId = projectID
         self.storyBoardTitle = projectTitle
         self.owner = owner

@@ -22,6 +22,14 @@ class FirebaseService {
         return userId
     }
     
+    func getCurrentUser() -> ProMUser? {
+        var promUser: ProMUser?
+        if let user = Auth.auth().currentUser {
+            promUser = ProMUser(key: user.uid, email: user.email!, name: user.displayName!)
+        }
+        return promUser
+    }
+    
     func getDatabaseReference() -> DatabaseReference {
         return Database.database().reference();
     }

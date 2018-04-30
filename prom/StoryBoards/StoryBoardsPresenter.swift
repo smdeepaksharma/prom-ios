@@ -25,12 +25,12 @@ class StoryBoardsPresenter: NSObject {
     func getStoryBoards() {
         self.storyBoardService.getStoryBoards(onStoryBoardsFetched: { boards in
             print("presenter", boards ?? "nil")
-            self.storyBoardView?.setStoryBoards(storyboards: boards!)
+            self.storyBoardView?.setStoryBoards(storyboards: boards)
            })
     }
     
-    func createStoryBoardWith(title: String) {
-        storyBoardService.createStoryBoardWith(title: title, completionHandler: { self.storyBoardView?.updateView()})
+    func createStoryBoardWith(storyBoardDetails: StoryBoard, collaborators: [ProMUser]?) {
+        storyBoardService.createStoryBoardWith(storyBoardDetails: storyBoardDetails, collaborators: collaborators, completionHandler: { self.storyBoardView?.updateView()})
     }
     
     func attachView(view: StoryBoardsView) {

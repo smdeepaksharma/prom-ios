@@ -24,34 +24,63 @@ class StoryBoardService: FirebaseService {
     func getStoryBoards(onStoryBoardsFetched: @escaping (_ boardsList: [StoryBoard]?) -> Void )  {
         
         var boards: [StoryBoard]?
-        if let userId = getCurrentFBUserID() {
-            self.getDatabaseReference().child(firebaseKey.USER_PROJECTS_KEY).child(userId).observeSingleEvent(of: .value, with: { (snapshot) in
+        if let currentUser = getCurrentUser() {
+            self.getDatabaseReference().child(firebaseKey.USER_PROJECTS_KEY).child(currentUser.key).observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
                 if value == nil {
                     print("No boards yet")
+                    onStoryBoardsFetched(nil)
                 } else {
                     boards = []
                     for (key, value) in value! {
                         print(key, value)
-                        boards?.append(StoryBoard.init(projectID: key as! String, projectTitle: value as! String, owner: userId as String))
+                        boards?.append(StoryBoard.init(projectID: key as! String, projectTitle: value as! String, owner: currentUser))
+                        
                     }
-                    print("Boards fetched: ", boards?.count)
                     onStoryBoardsFetched(boards)
                 }
             })
         }
     }
     
-    func createStoryBoardWith(title: String, completionHandler: () -> ()) {
+    func createStoryBoardWith(storyBoardDetails: StoryBoard, collaborators: [ProMUser]?, completionHandler: () -> ()) {
         if let userId = getCurrentFBUserID() {
             let timestamp = NSDate().timeIntervalSince1970.bitPattern
             let storyKey = "\(userId)_\(timestamp)"
+            
+            let params: [String : Any] = [
+                storyBoardsKey.title : storyBoardDetails.storyBoardTitle,
+                storyBoardsKey.owner : [storyBoardDetails.owner.key: storyBoardDetails.owner.name]
+            ]
+            
             self.getDatabaseReference().child(firebaseKey.STORYBOARDS_KEY)
                 .child(storyKey)
-                .setValue([storyBoardsKey.title: title, storyBoardsKey.owner: userId])
-            self.getDatabaseReference().child(firebaseKey.USER_PROJECTS_KEY).child(userId).child(storyKey).setValue(title)
+                .setValue(params)
             
-             completionHandler();
+            if let members = collaborators {
+                var paramters : [String: String] = [:]
+                for collaborator in members {
+                    paramters[collaborator.key] = collaborator.name
+                }
+                
+                getDatabaseReference().child(firebaseKey.STORYBOARDS_KEY).child(storyKey).child(storyBoardsKey.collaboraters).setValue(paramters)
+                
+                
+                // update user_projects
+                
+                getDatabaseReference().child(firebaseKey.USER_PROJECTS_KEY).child(storyBoardDetails.owner.key)
+                    .child(storyKey).setValue(storyBoardDetails.storyBoardTitle)
+                
+                for collaborator in members {
+                    self.getDatabaseReference().child(firebaseKey.USER_PROJECTS_KEY)
+                        .child(collaborator.key).child(storyKey).setValue(storyBoardDetails.storyBoardTitle)
+                }
+            }
+            
+           
+            
+            
+             completionHandler()
         }
     }
     

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="avatarCell" id="gTV-IL-0wX" customClass="AvatarCell" customModule="prom" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3r4-Vx-zho">
+                        <rect key="frame" x="10" y="0.0" width="50" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="iqc-3o-osj"/>
+                            <constraint firstAttribute="height" constant="45" id="t4h-Ta-G6d"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deepak Sharma" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6OY-br-fHe">
+                        <rect key="frame" x="0.0" y="55" width="70" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="Cu2-0E-IWM"/>
+                            <constraint firstAttribute="height" constant="35" id="vPZ-g5-BxR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="3r4-Vx-zho" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Dfi-Hh-Tg2"/>
+                <constraint firstItem="3r4-Vx-zho" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VSu-Lk-JQE"/>
+                <constraint firstAttribute="trailing" secondItem="6OY-br-fHe" secondAttribute="trailing" id="YVh-4l-sld"/>
+                <constraint firstItem="6OY-br-fHe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="duU-RY-KDp"/>
+                <constraint firstAttribute="trailing" secondItem="3r4-Vx-zho" secondAttribute="trailing" constant="10" id="i00-mJ-j5d"/>
+                <constraint firstAttribute="bottom" secondItem="6OY-br-fHe" secondAttribute="bottom" id="mp7-wU-qfi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="70" height="90"/>
+            <connections>
+                <outlet property="avatarImage" destination="3r4-Vx-zho" id="gJ7-RW-Z6f"/>
+                <outlet property="nameLabel" destination="6OY-br-fHe" id="q0g-Rn-UKP"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="41"/>
+        </collectionViewCell>
+    </objects>
+</document>

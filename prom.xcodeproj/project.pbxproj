@@ -14,6 +14,13 @@
 		002DF5E8205D87A100AFA31A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002DF5E7205D87A100AFA31A /* Task.swift */; };
 		002DF5EA205D88BB00AFA31A /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002DF5E9205D88BB00AFA31A /* FirebaseService.swift */; };
 		002DF5EC205D987000AFA31A /* TasksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002DF5EB205D987000AFA31A /* TasksService.swift */; };
+		0062E05620886F780034C9C2 /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062E05520886F780034C9C2 /* TaskViewCell.swift */; };
+		0062E05820899F520034C9C2 /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062E05720899F520034C9C2 /* TasksPresenter.swift */; };
+		0062E05D208C28230034C9C2 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062E05B208C28230034C9C2 /* AvatarCell.swift */; };
+		0062E05E208C28230034C9C2 /* AvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0062E05C208C28230034C9C2 /* AvatarCell.xib */; };
+		0062E063208C53C40034C9C2 /* InviteMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062E062208C53C40034C9C2 /* InviteMember.swift */; };
+		0062E065208C5A780034C9C2 /* InvitePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062E064208C5A780034C9C2 /* InvitePresenter.swift */; };
+		0062E067208C635F0034C9C2 /* InviteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062E066208C635F0034C9C2 /* InviteService.swift */; };
 		006D40B7203FD2A100907F5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D40B6203FD2A100907F5F /* AppDelegate.swift */; };
 		006D40B9203FD2A100907F5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D40B8203FD2A100907F5F /* ViewController.swift */; };
 		006D40BC203FD2A100907F5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006D40BA203FD2A100907F5F /* Main.storyboard */; };
@@ -40,8 +47,13 @@
 		00C4380A208437EA0086396F /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C43809208437EA0086396F /* MembersViewController.swift */; };
 		00C4380C208447960086396F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C4380B208447960086396F /* MenuViewController.swift */; };
 		00C4380E208449340086396F /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C4380D208449340086396F /* TasksViewController.swift */; };
-		00C6499D20848757005B5B0D /* AvatarCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C6499C20848757005B5B0D /* AvatarCellCollectionViewCell.swift */; };
 		00D9D40A205F1FC700DB3141 /* CommonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9D409205F1FC700DB3141 /* CommonUIView.swift */; };
+		00E3D08120904EB100A1EBC1 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E3D08020904EB100A1EBC1 /* EmptyState.xib */; };
+		00E3D0832090511B00A1EBC1 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D0822090511B00A1EBC1 /* EmptyStateView.swift */; };
+		00E3D0872096AD2500A1EBC1 /* EmptyMembersList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E3D0862096AD2500A1EBC1 /* EmptyMembersList.xib */; };
+		00E3D0892096B95A00A1EBC1 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D0882096B95A00A1EBC1 /* Switcher.swift */; };
+		00E3D08C2096EF6000A1EBC1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D08B2096EF6000A1EBC1 /* ProfileViewController.swift */; };
+		00E3D08E2096FC5700A1EBC1 /* SlideCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D08D2096FC5700A1EBC1 /* SlideCustom.swift */; };
 		AD4915BE3C514FE2A368837B /* Pods_prom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1F9B0809F1F761B29BD1CC /* Pods_prom.framework */; };
 		C5D2384F76B723CAD8DBCE5F /* Pods_promTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D473E946B15E2FD69697CC0D /* Pods_promTests.framework */; };
 		D3B67F405C3F2FD2EF80B00C /* Pods_promUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACF5EDD5384B1E1009638BD /* Pods_promUITests.framework */; };
@@ -72,6 +84,13 @@
 		002DF5E7205D87A100AFA31A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		002DF5E9205D88BB00AFA31A /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		002DF5EB205D987000AFA31A /* TasksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksService.swift; sourceTree = "<group>"; };
+		0062E05520886F780034C9C2 /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
+		0062E05720899F520034C9C2 /* TasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenter.swift; sourceTree = "<group>"; };
+		0062E05B208C28230034C9C2 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		0062E05C208C28230034C9C2 /* AvatarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarCell.xib; sourceTree = "<group>"; };
+		0062E062208C53C40034C9C2 /* InviteMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteMember.swift; sourceTree = "<group>"; };
+		0062E064208C5A780034C9C2 /* InvitePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitePresenter.swift; sourceTree = "<group>"; };
+		0062E066208C635F0034C9C2 /* InviteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteService.swift; sourceTree = "<group>"; };
 		006D40B3203FD2A100907F5F /* prom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006D40B6203FD2A100907F5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		006D40B8203FD2A100907F5F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,8 +123,13 @@
 		00C43809208437EA0086396F /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
 		00C4380B208447960086396F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		00C4380D208449340086396F /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
-		00C6499C20848757005B5B0D /* AvatarCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		00D9D409205F1FC700DB3141 /* CommonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUIView.swift; sourceTree = "<group>"; };
+		00E3D08020904EB100A1EBC1 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
+		00E3D0822090511B00A1EBC1 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		00E3D0862096AD2500A1EBC1 /* EmptyMembersList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyMembersList.xib; sourceTree = "<group>"; };
+		00E3D0882096B95A00A1EBC1 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
+		00E3D08B2096EF6000A1EBC1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		00E3D08D2096FC5700A1EBC1 /* SlideCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCustom.swift; sourceTree = "<group>"; };
 		28ED8047D4882B4A9EE7CE0C /* Pods-promTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-promTests/Pods-promTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5445F9DFB23ADEC4667C8DD4 /* Pods-prom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-prom/Pods-prom.debug.xcconfig"; sourceTree = "<group>"; };
 		54CA8A7590AA4AA5EAEA4D2C /* Pods-prom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prom.release.xcconfig"; path = "Pods/Target Support Files/Pods-prom/Pods-prom.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +176,7 @@
 				00C43809208437EA0086396F /* MembersViewController.swift */,
 				00C4380B208447960086396F /* MenuViewController.swift */,
 				00C4380D208449340086396F /* TasksViewController.swift */,
+				0062E05720899F520034C9C2 /* TasksPresenter.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -164,6 +189,22 @@
 				002DF5E7205D87A100AFA31A /* Task.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0062E05F208C537D0034C9C2 /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				0062E062208C53C40034C9C2 /* InviteMember.swift */,
+				0062E064208C5A780034C9C2 /* InvitePresenter.swift */,
+			);
+			path = Members;
+			sourceTree = "<group>";
+		};
+		0062E068208D338A0034C9C2 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		006D40AA203FD2A100907F5F = {
@@ -191,6 +232,9 @@
 		006D40B5203FD2A100907F5F /* prom */ = {
 			isa = PBXGroup;
 			children = (
+				00E3D08A2096EF4500A1EBC1 /* Profile */,
+				0062E068208D338A0034C9C2 /* Delegates */,
+				0062E05F208C537D0034C9C2 /* Members */,
 				001BE0CF208048A50046459E /* Tasks */,
 				002DF5E2205600E100AFA31A /* Model */,
 				006D41122054E7F300907F5F /* Commons */,
@@ -200,6 +244,8 @@
 				006D40E7203FD2A900907F5F /* FeaturesIntro */,
 				006D40B6203FD2A100907F5F /* AppDelegate.swift */,
 				006D40B8203FD2A100907F5F /* ViewController.swift */,
+				00E3D0862096AD2500A1EBC1 /* EmptyMembersList.xib */,
+				00E3D08020904EB100A1EBC1 /* EmptyState.xib */,
 				006D40BA203FD2A100907F5F /* Main.storyboard */,
 				006D40C0203FD2A100907F5F /* Assets.xcassets */,
 				006D40FA2040055F00907F5F /* GoogleService-Info.plist */,
@@ -245,6 +291,7 @@
 				006D40EF203FFB9A00907F5F /* AuthViewController.swift */,
 				006D40F3203FFBBB00907F5F /* AuthPresenter.swift */,
 				006D4101204D121600907F5F /* SignUpViewController.swift */,
+				00E3D0882096B95A00A1EBC1 /* Switcher.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -256,6 +303,7 @@
 				006D410C20526B1B00907F5F /* StoryBoardService.swift */,
 				002DF5E9205D88BB00AFA31A /* FirebaseService.swift */,
 				002DF5EB205D987000AFA31A /* TasksService.swift */,
+				0062E066208C635F0034C9C2 /* InviteService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -277,9 +325,21 @@
 				00D9D409205F1FC700DB3141 /* CommonUIView.swift */,
 				001BE0CB208040C50046459E /* BaseUIViewController.swift */,
 				001BE0CD2080410B0046459E /* BaseUITableViewController.swift */,
-				00C6499C20848757005B5B0D /* AvatarCellCollectionViewCell.swift */,
+				0062E05520886F780034C9C2 /* TaskViewCell.swift */,
+				0062E05B208C28230034C9C2 /* AvatarCell.swift */,
+				0062E05C208C28230034C9C2 /* AvatarCell.xib */,
+				00E3D0822090511B00A1EBC1 /* EmptyStateView.swift */,
+				00E3D08D2096FC5700A1EBC1 /* SlideCustom.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		00E3D08A2096EF4500A1EBC1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				00E3D08B2096EF6000A1EBC1 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		9C8116133C40B4D76F3A0635 /* Frameworks */ = {
@@ -424,7 +484,10 @@
 				006D40EB203FD2D800907F5F /* Feature.xib in Resources */,
 				006D40C4203FD2A100907F5F /* LaunchScreen.storyboard in Resources */,
 				006D40C1203FD2A100907F5F /* Assets.xcassets in Resources */,
+				00E3D0872096AD2500A1EBC1 /* EmptyMembersList.xib in Resources */,
 				006D40FB2040055F00907F5F /* GoogleService-Info.plist in Resources */,
+				00E3D08120904EB100A1EBC1 /* EmptyState.xib in Resources */,
+				0062E05E208C28230034C9C2 /* AvatarCell.xib in Resources */,
 				006D40BC203FD2A100907F5F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +603,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/InitialsImageView/InitialsImageView.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -548,6 +613,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InitialsImageView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -608,15 +675,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E3D08E2096FC5700A1EBC1 /* SlideCustom.swift in Sources */,
 				006D40F4203FFBBB00907F5F /* AuthPresenter.swift in Sources */,
 				006D41142054E98700907F5F /* SpinnerView.swift in Sources */,
 				006D41112054E51500907F5F /* BasePresenter.swift in Sources */,
 				001BE0CC208040C50046459E /* BaseUIViewController.swift in Sources */,
 				006D410D20526B1B00907F5F /* StoryBoardService.swift in Sources */,
 				006D40B9203FD2A100907F5F /* ViewController.swift in Sources */,
+				00E3D08C2096EF6000A1EBC1 /* ProfileViewController.swift in Sources */,
 				006D40BF203FD2A100907F5F /* prom.xcdatamodeld in Sources */,
 				00C4380C208447960086396F /* MenuViewController.swift in Sources */,
 				002DF5EA205D88BB00AFA31A /* FirebaseService.swift in Sources */,
+				0062E063208C53C40034C9C2 /* InviteMember.swift in Sources */,
 				006D41162055019D00907F5F /* CreateStoryBoardController.swift in Sources */,
 				002DF5E8205D87A100AFA31A /* Task.swift in Sources */,
 				002DF5E42056010300AFA31A /* PromUser.swift in Sources */,
@@ -624,13 +694,19 @@
 				00C4380A208437EA0086396F /* MembersViewController.swift in Sources */,
 				006D40F7203FFD1B00907F5F /* AuthService.swift in Sources */,
 				006D4102204D121600907F5F /* SignUpViewController.swift in Sources */,
+				0062E05D208C28230034C9C2 /* AvatarCell.swift in Sources */,
 				001BE0CE2080410B0046459E /* BaseUITableViewController.swift in Sources */,
 				00C4380E208449340086396F /* TasksViewController.swift in Sources */,
 				006D41052052654100907F5F /* StoryBoardsViewController.swift in Sources */,
-				00C6499D20848757005B5B0D /* AvatarCellCollectionViewCell.swift in Sources */,
 				006D40ED203FD32200907F5F /* FeatureViewController.swift in Sources */,
+				00E3D0832090511B00A1EBC1 /* EmptyStateView.swift in Sources */,
+				0062E05820899F520034C9C2 /* TasksPresenter.swift in Sources */,
+				0062E065208C5A780034C9C2 /* InvitePresenter.swift in Sources */,
+				00E3D0892096B95A00A1EBC1 /* Switcher.swift in Sources */,
 				006D4107205265A200907F5F /* StoryBoardsPresenter.swift in Sources */,
+				0062E05620886F780034C9C2 /* TaskViewCell.swift in Sources */,
 				006D40B7203FD2A100907F5F /* AppDelegate.swift in Sources */,
+				0062E067208C635F0034C9C2 /* InviteService.swift in Sources */,
 				006D40F0203FFB9A00907F5F /* AuthViewController.swift in Sources */,
 				006D40E9203FD2CA00907F5F /* FeatureView.swift in Sources */,
 				002DF5EC205D987000AFA31A /* TasksService.swift in Sources */,

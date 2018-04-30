@@ -40,7 +40,6 @@ class SignUpViewController: UITableViewController {
     }
     
     @IBAction func onSignUpCancelled(_ sender: Any) {
-        print("Cancel clicked")
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -71,12 +70,14 @@ class SignUpViewController: UITableViewController {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
     }
+    
+    
 
 }
 
 extension SignUpViewController: AuthView {
         func updateUI() {
-            
+            performSegue(withIdentifier: "redirectToMain", sender: self)
         }
         
         func startLoading() -> UIView {

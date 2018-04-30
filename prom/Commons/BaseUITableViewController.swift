@@ -10,7 +10,7 @@ import UIKit
 
 class BaseUITableViewController: UITableViewController {
     
-    let currentView: UIView? = nil
+    var currentView: UIView?
     override func viewDidLoad() {
         super.viewDidLoad()
     }

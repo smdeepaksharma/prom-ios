@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class StoryBoardsViewController: UITableViewController {
     
     var storyBoardList: [StoryBoard]?
     let storyBoardPresenter = StoryBoardsPresenter(storyBoardService: StoryBoardService())
+    var selectedStory: StoryBoard?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,13 @@ class StoryBoardsViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    @IBAction func signOut(_ sender: Any) {
+        try? Auth.auth().signOut()
+        Switcher.updateRootVC()
+    }
+    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -44,8 +53,18 @@ class StoryBoardsViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(storyBoardList![indexPath.item].storyBoardTitle ?? "E")
+        selectedStory = storyBoardList![indexPath.item]
         performSegue(withIdentifier: "storyDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "storyDetails" {
+            if let destination = segue.destination as? TasksViewController {
+                destination.selectedStoryBoard = self.selectedStory!
+            }
+        }
+        
     }
     
 
@@ -57,9 +76,12 @@ extension StoryBoardsViewController: StoryBoardsView {
     }
     
     func setStoryBoards(storyboards: [StoryBoard]?) {
-        self.storyBoardList = storyboards!
-        print("in view \(self.storyBoardList?.count)")
-        self.tableView.reloadData()
+        if storyboards == nil {
+            self.tableView.backgroundView = EmptyStateView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height), nib: "EmptyState", image: UIImage.init(named: "storyboard")!, message: "Go ahead and create your first stoyboard")
+        } else {
+            self.storyBoardList = storyboards!
+            self.tableView.reloadData()
+        }
     }
     
     

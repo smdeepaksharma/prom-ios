@@ -8,43 +8,116 @@
 
 import UIKit
 
-class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
+class TasksViewController: BaseUIViewController, UITableViewDelegate, UITableViewDataSource {
+   
+
+    @IBOutlet weak var taskCategorySegmentControl: UISegmentedControl!
+
     @IBOutlet weak var maneuTrailingConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var tabelView: UITableView!
     @IBOutlet weak var menuLeadingContraint: NSLayoutConstraint!
     @IBOutlet weak var toggleMenu: UIBarButtonItem!
     
+    let taskPresenter = TasksPresenter(taskService: TasksService())
+    
+    var newIdeas: [Task]?
+    var proritizedTasks : [Task]?
+    var myTasks: [Task]?
+    
+    var activeTasks: [Task]?
+  
+    var selectedStoryBoard: StoryBoard?
+    var selectedTask: Task?
     var toggle: Bool = false
+    
+    var emptyStateView: EmptyStateView?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tabelView.delegate = self
         self.tabelView.dataSource = self
-        maneuTrailingConstraint.constant = -230.00
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+      
+        self.navigationItem.title = selectedStoryBoard?.storyBoardTitle
+        self.navigationItem.backBarButtonItem?.title = ""
+        
+        self.taskPresenter.getStoryBoardDetails(storyBoardId: (selectedStoryBoard?.storyBoardId)!)
+        self.taskPresenter.attachView(view: self)
+        
+        emptyStateView = EmptyStateView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height), nib: "EmptyState", image: UIImage.init(named: "list")!, message: "Got a great idea? Dont lose them. Create stories and features")
+        
+        view.sizeToFit()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.activeTasks = nil
+        self.taskPresenter.getStoryBoardTasks(storyboardId: (selectedStoryBoard?.storyBoardId)!)
+        
+    }
+    
+    
+    @IBAction func onTaskCategotyChange(_ sender: Any) {
+        let index = taskCategorySegmentControl.selectedSegmentIndex
+        
+        switch index {
+        case 0:
+            self.activeTasks = self.newIdeas
+            self.tabelView.reloadData()
+            break
+        case 1:
+            self.activeTasks = self.proritizedTasks
+            self.tabelView.reloadData()
+            break
+        case 2:
+            self.activeTasks = self.myTasks
+            self.tabelView.reloadData()
+            break
+        default:
+            break
+        }
+        
+        if activeTasks == nil || (activeTasks?.isEmpty)! {
+            self.tabelView.backgroundView = emptyStateView
+        } else {
+            self.tabelView.backgroundView = nil
+        }
+
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tabelView.dequeueReusableCell(withIdentifier: "taskCell")
-        return cell!
+        let cell = tabelView.dequeueReusableCell(withIdentifier: "taskSummary") as! TaskViewCell
+        cell.taskTitle.text = activeTasks?[indexPath.row].taskTitle
+        cell.taskStatus.text = activeTasks?[indexPath.row].taskStatus
+        cell.taskStatus.textColor = getTaskStatusColor(status: (activeTasks?[indexPath.row].taskStatus)!)
+        cell.ownerInitials.setImageForName(string: "Deepak Sharma", backgroundColor: UIColor.lightGray, circular: true, textAttributes: nil, gradient: true)
+        return cell
     }
     
-
-
+    
+    func getTaskStatusColor(status: String) -> UIColor {
+        
+        switch status {
+        case "Working on it":
+            return UIColor.orange
+        case "Stuck":
+            return UIColor.red
+        case "Yet to start":
+            return UIColor.lightText
+        default:
+            return UIColor.black
+        }
+        
+    }
+    
     @IBAction func onToggleMenu(_ sender: Any) {
         toggle = !toggle
         if(toggle) {
+            taskCategorySegmentControl.isHidden = true
             maneuTrailingConstraint.constant = 0
             UIView.animate(withDuration: 0.3, animations: { self.view.layoutIfNeeded()})
         } else {
+            taskCategorySegmentControl.isHidden = false
             maneuTrailingConstraint.constant = -230.00
             UIView.animate(withDuration: 0.3, animations: { self.view.layoutIfNeeded()})
         }
@@ -56,6 +129,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onCreateNewTask(_ sender: Any) {
+        performSegue(withIdentifier: "newTaskDetails", sender: self)
+    }
     // MARK: - Table view data source
 
     
@@ -63,66 +139,67 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedTask = activeTasks?[indexPath.row]
+        performSegue(withIdentifier: "taskDetails", sender: self)
+    }
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return activeTasks?.count ?? 0
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "taskDetails" || segue.identifier == "taskDetails"{
+            if let taskDetailsController = segue.destination as? TaskDetailsController {
+                taskDetailsController.storyBoard = self.selectedStoryBoard!
+                taskDetailsController.selectedTask = self.selectedTask
+            }
+        }
+        
+        if segue.identifier == "projectMenu" {
+            print(segue.destination.description)
+            if let menuVC = segue.destination as? MenuViewController {
+                menuVC.selectedStory = self.selectedStoryBoard
+                
+            }
+        }
+        
+        
     }
-    */
+    
+    
+}
+extension TasksViewController: TasksView {
+    func setStoryBoard(storyBoard: StoryBoard) {
+        self.selectedStoryBoard = storyBoard
+        let storyBoardDefaults = UserDefaults.standard
+        storyBoardDefaults.set(storyBoard.collaborators, forKey: "coll")
+        storyBoardDefaults.synchronize()
+    }
+    
 
+    func updateTasksView(newIdeas: [Task]?, proritize: [Task]?, myWork: [Task]?) {
+        
+        self.newIdeas = newIdeas
+        self.proritizedTasks = proritize
+        self.myTasks = myWork
+        self.activeTasks = newIdeas
+        
+        if activeTasks == nil || (activeTasks?.isEmpty)! {
+            self.tabelView.backgroundView = emptyStateView
+        } else {
+            self.tabelView.backgroundView = nil
+        }
+        
+        self.tabelView.reloadData()
+    }
+    
+    func updateUI() {
+        
+    }
+    
+    
 }

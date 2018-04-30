@@ -57,7 +57,7 @@ class AuthService: NSObject {
     func updateMembersList() {
         if let user = Auth.auth().currentUser {
             ref = Database.database().reference()
-            self.ref.child("members").child(user.uid).setValue(["email" : user.email!, "name" : user.displayName!, "initials" : generateUserInitails(username: user.displayName!)])
+            self.ref.child("members").child(user.uid).setValue(["email" : user.email!, "name" : user.displayName!])
         }
     }
     
@@ -70,5 +70,4 @@ class AuthService: NSObject {
             return "\(String(describing: name[0].first!))"
         }
     }
-    
 }

@@ -8,13 +8,15 @@
 
 import UIKit
 
-class PromUser: NSObject {
+class PromUser: Decodable {
     
     var uid: String?
     var name: String?
+    var email: String?
     
     init(uid: String, name: String) {
         self.uid = uid
         self.name = name
     }
 }
+
